@@ -237,8 +237,8 @@ public class ClientOumaima {
 
 	public static void main(String[] args) throws IOException, JSONException {
 		ClientOumaima client1 = new ClientOumaima();
-		client1.startConnection("172.31.249.254", 3030);
-
+		//client1.startConnection("localhost", 3030);
+         client1.startConnection("172.31.249.81", 3030);
 	}
 
 }

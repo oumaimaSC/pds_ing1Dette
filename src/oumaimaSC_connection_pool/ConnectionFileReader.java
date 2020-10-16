@@ -18,7 +18,7 @@ public final class ConnectionFileReader {
 	public void Read() {
 		InputStream fis;
 		try {
-			fis = getClass().getClassLoader().getResourceAsStream("sakao_connection_pool/ConnectionFile.xml");
+			fis = getClass().getClassLoader().getResourceAsStream("OumaimaSC_connection_pool/ConnectionFile.xml");
 			p.loadFromXML(fis);
 		} catch (IOException e) {
 			e.printStackTrace();

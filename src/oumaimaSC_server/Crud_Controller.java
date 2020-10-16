@@ -20,7 +20,7 @@ public class Crud_Controller {
 		try {
 			Connection con = DataSource.getConnection();
 
-			PreparedStatement pt = con.prepareStatement("select * from personne where id =" + id);
+			PreparedStatement pt = con.prepareStatement("select * from student where id =" + id);
 			ResultSet rs = pt.executeQuery();
 			while (rs.next()) {
 				int idS = rs.getInt(1);
@@ -44,7 +44,7 @@ public class Crud_Controller {
 		try {
 			Connection con = DataSource.getConnection();
 
-			PreparedStatement pt = con.prepareStatement("select * from personne");
+			PreparedStatement pt = con.prepareStatement("select * from student");
 			ResultSet rs = pt.executeQuery();
 			while (rs.next()) {
 				int id = rs.getInt(1);
@@ -82,7 +82,7 @@ public class Crud_Controller {
 	public void deleteStudentById(int ID) throws ClassNotFoundException {
 		try {
 			Connection con = DataSource.getConnection();
-			PreparedStatement pt = con.prepareStatement("delete from personne where id = " + ID);
+			PreparedStatement pt = con.prepareStatement("delete from student where id = " + ID);
 			pt.execute();
 			DataSource.returnConnection(con);
 
@@ -99,7 +99,7 @@ public class Crud_Controller {
 		try {
 			Connection con = DataSource.getConnection();
 
-			String req = "insert into personne(name,age) values (?,?)";
+			String req = "insert into student (name,age) values (?,?)";
 			PreparedStatement pstm = con.prepareStatement(req);
 			pstm.setString(1, p.getName());
 			pstm.setInt(2, p.getAge());
@@ -117,7 +117,7 @@ public class Crud_Controller {
 		try {
 			Connection con = DataSource.getConnection();
 
-			PreparedStatement pstm = con.prepareStatement(" UPDATE personne SET age = ?  WHERE id = ?");
+			PreparedStatement pstm = con.prepareStatement(" UPDATE student SET age = ?  WHERE id = ?");
 			pstm.setInt(1, age);
 			pstm.setInt(2, id);
 			pstm.executeUpdate();
@@ -132,7 +132,7 @@ public class Crud_Controller {
 		try {
 			Connection con = DataSource.getConnection();
 
-			PreparedStatement pstm = con.prepareStatement(" UPDATE personne SET name = ?  WHERE id = ?");
+			PreparedStatement pstm = con.prepareStatement(" UPDATE student SET name = ?  WHERE id = ?");
 			pstm.setString(1, name);
 			pstm.setInt(2, id);
 			pstm.executeUpdate();
@@ -148,7 +148,7 @@ public class Crud_Controller {
 		Connection con = DataSource.getConnection();
 
 		Statement query = con.createStatement();
-		int result = query.executeUpdate("TRUNCATE TABLE personne");
+		int result = query.executeUpdate("TRUNCATE TABLE student");
 		DataSource.returnConnection(con);
 
 	}
