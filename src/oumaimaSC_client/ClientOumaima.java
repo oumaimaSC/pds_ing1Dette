@@ -239,6 +239,7 @@ public class ClientOumaima {
 		ClientOumaima client1 = new ClientOumaima();
 		//client1.startConnection("localhost", 3030);
          client1.startConnection("172.31.249.81", 3030);
+         //client1.StartHMIStudent();
 	}
 
 }
