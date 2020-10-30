@@ -12,7 +12,7 @@ public class Crud_Service {
 		this.controller = new Crud_Controller();
 	}
 
-	public ArrayList<Student> showStudent() throws ClassNotFoundException {
+	public ArrayList<Student> showStudent() throws ClassNotFoundException ,  InterruptedException {
 		return controller.showStudent();
 	}
 

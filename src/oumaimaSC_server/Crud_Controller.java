@@ -39,9 +39,12 @@ public class Crud_Controller {
 
 	// Request SELECT
 
-	public ArrayList<Student> showStudent() throws ClassNotFoundException {
+	public ArrayList<Student> showStudent() throws ClassNotFoundException, InterruptedException {
 		ArrayList<Student> retour = new ArrayList<Student>();
 		try {
+			System.out.println("Connexion available on connexion pool before use : "+DataSource.getListConnectionavailable().size());
+	        Thread.sleep(3000);
+			System.out.println("Using");
 			Connection con = DataSource.getConnection();
 
 			PreparedStatement pt = con.prepareStatement("select * from student");
@@ -50,9 +53,20 @@ public class Crud_Controller {
 				int id = rs.getInt(1);
 				String name = rs.getString(2);
 				int age = rs.getInt(3);
+
 				retour.add(new Student(id, name, age));
-				DataSource.returnConnection(con);
+				
 			}
+			long start = System.currentTimeMillis();
+		      
+		       // System.out.println("Sleep time in ms = "+(System.currentTimeMillis()-start));
+		        
+		        System.out.println("Connection available on connection pool after use "+DataSource.getListConnectionavailable().size());
+		        System.out.println("15 seconde before the availability of the connection");
+		        Thread.sleep(15000);
+		        System.out.println(" return the connection+1");
+		        DataSource.returnConnection(con);
+		        System.out.println("Connection available on connection pool "+DataSource.getListConnectionavailable().size());
 
 		} catch (SQLException ex) {
 			System.out.println("erreur " + ex.getMessage());

@@ -34,7 +34,7 @@ public class ClientThread extends Thread {
 	}
 
 	public void StartCrud()
-			throws JsonParseException, JsonMappingException, IOException, ClassNotFoundException, NullPointerException {
+			throws JsonParseException, JsonMappingException, IOException, ClassNotFoundException, NullPointerException, InterruptedException  {
 		mapper = new ObjectMapper();
 		String jsonString = in.readLine();
 		request = mapper.readValue(jsonString, Request.class);
@@ -110,7 +110,7 @@ public class ClientThread extends Thread {
 		}
 	}
 
-	public void run() {
+	public void run()  {
 		try {
 			out = new OutputStreamWriter(clientSocket.getOutputStream(), StandardCharsets.UTF_8);
 			in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -132,6 +132,9 @@ public class ClientThread extends Thread {
 			System.out.println(this.getName() + " disconnected");
 			System.out.println("********************");
 
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }

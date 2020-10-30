@@ -54,20 +54,43 @@ public class JDBCConnectionPool {
 	///// Take a connection in the pool
 	public synchronized Connection getConnectionFromPool() {
 		Connection connection = null;
-		while (this.IsEmpty()) {
+		boolean b = false;
+		
+		
+		if(JDBCConnectionPool.listConnectionavailable.size() != 0) {
+			
+			
+			b = true;
+			this.notifyAll();
+			
+		}else {
+			
+			b = false;
+			System.out.println("Please wait");
+			
+		}
+		
+		while (b == false) {
 			try {
-				System.out.println("Please wait");
-				this.wait();
-			} catch (InterruptedException e) {
+				
+				wait(1);
+				if(JDBCConnectionPool.listConnectionavailable.size() != 0) {
+					b = true;
+				}
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		connection = listConnectionavailable.get(0);
-		listConnectionavailable.remove(0);
-		this.notifyAll();
+		
+			
+			connection = listConnectionavailable.get(0);
+			listConnectionavailable.remove(0);
+			b = false;
+			this.notifyAll();
+		
+		 
 		return connection;
 	}
-
 	///// Put the connection in the pool
 	public synchronized void returConnectionToPool(Connection connection) {
 		listConnectionavailable.add(connection);
@@ -91,5 +114,6 @@ public class JDBCConnectionPool {
 	public void setListConnectionavailable(ArrayList<Connection> listConnectionavailable) {
 		JDBCConnectionPool.listConnectionavailable = listConnectionavailable;
 	}
+
 
 }
