@@ -7,13 +7,100 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import oumaimaSC_common.Student;
+import org.codehaus.jackson.map.ObjectMapper;
+
+import oumaimaSC_common.*;
 import oumaimaSC_connection_pool.DataSource;
 
 public class Crud_Controller {
 
 	public Crud_Controller() throws ClassNotFoundException {
 	}
+	
+	public ArrayList<String> showAllTransport() throws ClassNotFoundException {
+		ArrayList<String> retour = new ArrayList<String>();
+		try {
+			Connection con = DataSource.getConnection();
+			PreparedStatement pt = con.prepareStatement("select * from transportation");
+			ResultSet rs = pt.executeQuery();
+			while (rs.next()) {
+				retour.add(new Transportation(rs.getInt("idtransportation"), rs.getString("typeoftransport"),
+						rs.getInt("dailytransportusercount"),
+						rs.getDouble("averageofco2releasedbytransport")).toString());
+
+			}
+			DataSource.returnConnection(con);
+		} catch (SQLException ex) {
+			System.out.println("erreur " + ex.getMessage());
+		}
+		return retour;
+	}
+	
+	
+	
+	public ArrayList<String> showCityEM() {
+		ArrayList<String> don = new ArrayList<String>();
+		try {
+			Connection con = DataSource.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from smartcity");
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				SmartCity s = new SmartCity(rs.getInt("idcity"), rs.getDouble("heightkm"), rs.getDouble("widthkm"));
+
+				don.add(new ObjectMapper().writeValueAsString(s));
+			}
+
+			DataSource.returnConnection(con);
+			System.out.println("fini");
+		} catch (Exception e) {
+			System.out.println("erreur " + e.getMessage());
+		}
+
+		return don;
+	}
+	
+	public ArrayList<String> showVehiculNumb() {
+		ArrayList<String> don = new ArrayList<String>();
+		try {
+			Connection con = DataSource.getConnection();
+			PreparedStatement ps = con.prepareStatement("select maxnumbervehicles from smartcity;");
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				System.out.println("/////////////////////////////////////////////////////");
+		//		SmartCity s = new SmartCity(rs.getInt("maxnumbervehicles"));
+				
+				//don.add(new ObjectMapper().writeValueAsString(s));
+			}
+
+			DataSource.returnConnection(con);
+			System.out.println("fini");
+		} catch (Exception e) {
+			System.out.println("erreur " + e.getMessage());
+		}
+
+		return don;
+	}
+
+	public ArrayList<String> showBeta() {
+		ArrayList<String> don = new ArrayList<String>();
+		try {
+			Connection con = DataSource.getConnection();
+			PreparedStatement ps = con.prepareStatement("select avg(beteaverage) as betaaverage from pollutionsensor");
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				// don.add(new PollutionSensor(rs.getDouble(1)).toString());
+			}
+			DataSource.returnConnection(con);
+			System.out.println("fini");
+		} catch (Exception e) {
+			System.out.println("erreur " + e.getMessage());
+		}
+
+		return don;
+	}
+
 
 	public Student existStudent(int id) throws ClassNotFoundException {
 		Student retour = null;

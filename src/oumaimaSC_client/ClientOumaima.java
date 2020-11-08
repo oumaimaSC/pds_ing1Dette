@@ -104,7 +104,7 @@ public class ClientOumaima {
 	/*
 	 * 
 	 * while (true) { try { age = clavier.nextInt(); break; } catch (Exception) {
-	 * System.out.println("Uniquement des chiffres s'il-te-plaît !"); } }
+	 * System.out.println("Uniquement des chiffres s'il-te-plaï¿½t !"); } }
 	 * 
 	 */
 
@@ -130,7 +130,7 @@ public class ClientOumaima {
 			choice = choix;
 
 			switch (choix) {
-
+/*
 			case 1:
 				System.out.println("Please enter the name");
 				String nameInsert = sc.next();
@@ -226,8 +226,8 @@ public class ClientOumaima {
 					this.CloseConnection();
 
 				} catch (Exception e) {
-					;
-				}
+					
+				}*/
 
 			}
 
