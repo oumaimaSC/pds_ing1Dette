@@ -1,7 +1,7 @@
 package oumaimaSC_common;
 
 import java.util.ArrayList;
-
+//change ?
 public class Response {
 	ArrayList<String> list;
 
