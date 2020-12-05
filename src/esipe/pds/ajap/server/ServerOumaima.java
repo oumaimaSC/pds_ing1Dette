@@ -1,11 +1,11 @@
-package oumaimaSC_server;
+package esipe.pds.ajap.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 
 import org.json.JSONException;
 
-import oumaimaSC_connection_pool.DataSource;
+import esipe.pds.ajap.connection_pool.DataSource;
 
 public class ServerOumaima {
 	private ServerSocket serverSocket;

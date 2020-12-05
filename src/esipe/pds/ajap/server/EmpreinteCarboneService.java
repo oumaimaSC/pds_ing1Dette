@@ -1,4 +1,4 @@
-package oumaimaSC_server;
+package esipe.pds.ajap.server;
 
 import java.util.ArrayList;
 

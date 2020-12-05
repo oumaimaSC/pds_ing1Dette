@@ -1,4 +1,4 @@
-package oumaimaSC_server;
+package esipe.pds.ajap.server;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
-import oumaimaSC_common.*;
-import oumaimaSC_connection_pool.DataSource;
+import esipe.pds.ajap.common.*;
+import esipe.pds.ajap.connection_pool.DataSource;
 
 public class Crud_Controller {
 

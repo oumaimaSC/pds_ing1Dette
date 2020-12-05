@@ -1,12 +1,12 @@
-package oumaimaSC_connection_pool;
+package esipe.pds.ajap.connection_pool;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import oumaimaSC_client.ClientOumaima;
-import oumaimaSC_server.ClientThread;
+import esipe.pds.ajap.client.Client;
+import esipe.pds.ajap.server.ClientThread;
 
 public class JDBCConnectionPool {
 

@@ -1,4 +1,4 @@
-package oumaimaSC_client;
+package esipe.pds.ajap.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,10 +12,10 @@ import java.util.Scanner;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.json.JSONException;
 
-import oumaimaSC_common.Request;
-import oumaimaSC_common.Response;
+import esipe.pds.ajap.common.Request;
+import esipe.pds.ajap.common.Response;
 
-public class ClientOumaima {
+public class Client {
 	private Socket clientSocket;
 	private OutputStreamWriter out;
 	private BufferedReader in;
@@ -236,7 +236,7 @@ public class ClientOumaima {
 	}
 
 	public static void main(String[] args) throws IOException, JSONException {
-		ClientOumaima client1 = new ClientOumaima();
+		Client client1 = new Client();
 		client1.startConnection("localhost", 3030);
         // client1.startConnection("172.31.249.81", 3030);
          //client1.StartHMIStudent();

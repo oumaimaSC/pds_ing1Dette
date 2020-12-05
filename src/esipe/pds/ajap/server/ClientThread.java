@@ -1,4 +1,4 @@
-package oumaimaSC_server;
+package esipe.pds.ajap.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,8 +15,8 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.json.JSONException;
 
-import oumaimaSC_common.Request;
-import oumaimaSC_common.Response;
+import esipe.pds.ajap.common.Request;
+import esipe.pds.ajap.common.Response;
 
 public class ClientThread extends Thread {
 	private Socket clientSocket;

@@ -1,4 +1,4 @@
-package oumaimaSC_connection_pool;
+package esipe.pds.ajap.connection_pool;
 
 import java.sql.Connection;
 import java.sql.SQLException;

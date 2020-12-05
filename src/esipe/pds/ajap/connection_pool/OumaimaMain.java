@@ -1,6 +1,6 @@
-package oumaimaSC_connection_pool;
+package esipe.pds.ajap.connection_pool;
 
-import oumaimaSC_server.Crud_Service;;
+import esipe.pds.ajap.server.Crud_Service;;
 
 public class OumaimaMain {
 

@@ -1,4 +1,4 @@
-package oumaimaSC_client;
+package esipe.pds.ajap.client;
 /* Oumaima Code*/
 public class CalculS {
 	private double vehicalPollution;// = 126 ;

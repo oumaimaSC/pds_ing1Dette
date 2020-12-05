@@ -1,4 +1,4 @@
-package oumaimaSC_client;
+package esipe.pds.ajap.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.json.JSONException;
 
-import oumaimaSC_common.*;
+import esipe.pds.ajap.common.*;
 
 public class AppStructureHandler {
 

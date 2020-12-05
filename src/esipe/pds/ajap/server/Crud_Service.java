@@ -1,8 +1,8 @@
-package oumaimaSC_server;
+package esipe.pds.ajap.server;
 
 import java.util.ArrayList;
 
-import oumaimaSC_common.Student;
+import esipe.pds.ajap.common.Student;
 
 public class Crud_Service {
 

@@ -1,4 +1,4 @@
-package oumaimaSC_client;
+package esipe.pds.ajap.client;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,7 +12,7 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.json.JSONException;
 
-import oumaimaSC_common.*;
+import esipe.pds.ajap.common.*;
 
 import java.awt.Window.Type;
 import java.awt.CardLayout;

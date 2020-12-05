@@ -1,4 +1,4 @@
-package oumaimaSC_client;
+package esipe.pds.ajap.client;
 /* Oumaima Code*/
 
 import javax.swing.JPanel;
@@ -6,8 +6,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.json.JSONException;
-import oumaimaSC_common.*;
 
+import esipe.pds.ajap.common.*;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;

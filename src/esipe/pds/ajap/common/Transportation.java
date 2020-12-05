@@ -1,4 +1,4 @@
-package oumaimaSC_common;
+package esipe.pds.ajap.common;
 
 public class Transportation {
 	private int idtransportation;

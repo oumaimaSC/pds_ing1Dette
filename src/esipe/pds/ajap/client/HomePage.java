@@ -1,4 +1,4 @@
-package oumaimaSC_client;
+package esipe.pds.ajap.client;
 
 import javax.swing.JPanel;
 import java.awt.Color;
