@@ -24,8 +24,7 @@ public class readFichierjson {
 	}
 
 	public String readFiletransportation() throws IOException {
-		InputStream fis = new FileInputStream("resources/test/transportation.json");
-		InputStreamReader ipsr = new InputStreamReader(fis);
+		InputStreamReader ipsr = new InputStreamReader(getClass().getClassLoader().getResourceAsStream("test/transportation.json"));
 		BufferedReader br = new BufferedReader(ipsr);
 		String outjsonString = "";
 		String chaine = "";
@@ -33,9 +32,8 @@ public class readFichierjson {
 		while ((outjsonString = br.readLine()) != null) {
 			chaine = chaine + outjsonString;
 		}
-		System.out.println("Data reading in the file : " + chaine);
+
 		return chaine;
 	}
-	
 	
 }
