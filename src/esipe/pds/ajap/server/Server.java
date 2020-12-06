@@ -7,7 +7,7 @@ import org.json.JSONException;
 
 import esipe.pds.ajap.connection_pool.DataSource;
 
-public class ServerOumaima {
+public class Server {
 	private ServerSocket serverSocket;
 	private static DataSource datasource;
 
@@ -33,7 +33,7 @@ public class ServerOumaima {
 	}
 
 	public static void main(String[] args) throws IOException, JSONException, ClassNotFoundException {
-		ServerOumaima serveur1 = new ServerOumaima();
+		Server serveur1 = new Server();
 		serveur1.start(3030);
 		serveur1.CloseConnection();
 	}

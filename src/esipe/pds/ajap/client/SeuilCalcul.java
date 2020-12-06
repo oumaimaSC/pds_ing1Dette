@@ -220,7 +220,7 @@ public class SeuilCalcul extends JPanel {
 		JSpinner spinner = new JSpinner();
 		spinner.setBounds(286, 95, 96, 20);
 		spinner.setModel(new SpinnerNumberModel(0, 0, 4000, 1));
-
+	
 		JLabel lblThresholdCalculate = new JLabel("threshold calculate");
 		lblThresholdCalculate.setBounds(29, 300, 125, 13);
 		panel.add(lblThresholdCalculate);

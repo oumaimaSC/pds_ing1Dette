@@ -33,6 +33,8 @@ public class Transportation {
 		this.typeoftransport = typeoftransport;
 	}
 
+	
+
 	public int getDailytransportusercount() {
 		return dailytransportusercount;
 	}
@@ -56,6 +58,11 @@ public class Transportation {
 					+ "\"dailytransportusercount\":\"" + + this.getDailytransportusercount() +"\","+ "\"averageofco2releasedbytransport\":\"" + this.getAverageofco2releasedbytransport() +
 					
 					"\"}";
+		}
+
+		public int getint(String string) {
+			// TODO Auto-generated method stub
+			return 0;
 		}
 	}
 

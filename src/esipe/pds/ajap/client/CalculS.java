@@ -37,13 +37,21 @@ public double CercleAverageDistanceW (double heightkm) {
 }
 
 ///////estimated threshold ////
-public double estimatedThreshold (int nbreVehicule,double heightkm, int nbreCycliste, int utilisateurTram, int pieton) {
+
+/*public double estimatedThreshold (int nbreVehicule,double heightkm, int nbreCycliste, int utilisateurTram, int pieton) {
 	double V1=this.vehicalPollution*this.CercleAverageDistanceV(heightkm)*nbreVehicule;
 	double V2= this.tramPollution *this.CercleAverageDistanceT(heightkm)*utilisateurTram;
 	double V3 =this.cyclistPollution *this.CercleAverageDistanceC(heightkm)*nbreCycliste;
 	double V4= this.walkerPollution *this.CercleAverageDistanceW(heightkm)*pieton;
 	return ((V1 +V2+V4+V3)/1000);
 }
-
+*/
+public double estimatedThreshold (int nbreVehicule,double heightkm, int nbreCycliste, int utilisateurTram, int pieton) {
+	double V1=126*this.CercleAverageDistanceV(heightkm)*nbreVehicule;
+	double V2= 43 *this.CercleAverageDistanceT(heightkm)*utilisateurTram;
+	double V3 =16 *this.CercleAverageDistanceC(heightkm)*nbreCycliste;
+	double V4= 4 *this.CercleAverageDistanceW(heightkm)*pieton;
+	return ((V1 +V2+V4+V3)/1000);
+}
 
 }

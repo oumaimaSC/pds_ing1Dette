@@ -1,0 +1,23 @@
+
+{
+	
+	{ "idtransportation": 1,
+		  "typeoftransport": "Vehicule",
+		  "dailytransportusercount":4000,
+		  "averageofco2releasedbytransport": 126
+		  
+		  },
+	{ "idtransportation": 2,
+		  "typeoftransport": "Tram",
+		  "dailytransportusercount":2000 ,
+		  "averageofco2releasedbytransport": 43
+		  
+		  },
+	{ "idtransportation": 3,
+		  "typeoftransport": "Bike",
+		  "dailytransportusercount":1000 ,
+		  "averageofco2releasedbytransport": 16
+		  
+		  }
+	
+}
