@@ -10,8 +10,10 @@ public class readFichierjson {
 
 	public String readFileCarbonEstimateConf() throws IOException {
 		
-		InputStream fis = new FileInputStream("resources/test/smartCity.json");
-		InputStreamReader ipsr = new InputStreamReader(fis);
+		//InputStream fis = new FileInputStream("resources/test/smartCity.json");
+		InputStreamReader ipsr = new InputStreamReader(getClass().getClassLoader().getResourceAsStream("test/smartCity.json"));
+		//InputStream fis = new FileInputStream("test/smartCity.json");
+		//InputStreamReader ipsr = new InputStreamReader(fis);
 		BufferedReader br = new BufferedReader(ipsr);
 		String outjsonString = "";
 		String chaine = "";

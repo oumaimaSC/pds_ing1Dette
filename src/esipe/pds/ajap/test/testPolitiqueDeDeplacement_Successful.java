@@ -128,7 +128,7 @@ public class testPolitiqueDeDeplacement_Successful {
 		int nbrePietonD = (nbrePopulation - nbreVehiculeD - nbreTramD - nbreCyclisteD);
 
 		System.out.println("**********************************");
-		System.out.println("  THE BEGINNING OF THE TEST 1");
+		System.out.println("  THE BEGINNING OF THE TEST 2");
 		System.out.println("**********************************");
 		System.out.println("IN THIS TEST WE WILL PROPOSE A GOOD  TRAVEL POLICY");
 		System.out.println("EXPECTED RESULT :the proposed travel policy is better than the current travel policy");

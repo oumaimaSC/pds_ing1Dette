@@ -128,7 +128,7 @@ public class testPolitiqueDeDeplacement_ThrowErreur {
 		int nbrePietonD = (nbrePopulation - nbreVehiculeD - nbreTramD - nbreCyclisteD);
 
 		System.out.println("**********************************");
-		System.out.println("  THE BEGINNING OF THE TEST 1");
+		System.out.println("  THE BEGINNING OF THE TEST 3");
 		System.out.println("**********************************");
 		System.out.println("IN THIS TEST WE WILL PROPOSE TRAVEL POLICY  NOT ACCEPTED");
 		System.out.println("EXPECTED RESULT :The sums of the users of transport must be less than the number of population");

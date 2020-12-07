@@ -237,8 +237,8 @@ public class Client {
 
 	public static void main(String[] args) throws IOException, JSONException {
 		Client client1 = new Client();
-		client1.startConnection("localhost", 3030);
-        // client1.startConnection("172.31.249.81", 3030);
+		//client1.startConnection("localhost", 3030);
+         client1.startConnection("172.31.249.81", 3030);
          //client1.StartHMIStudent();
 	}
 

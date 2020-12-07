@@ -1,3 +1,4 @@
+
 package esipe.pds.ajap.client;
 /* Oumaima Code*/
 
@@ -293,9 +294,23 @@ public class SeuilCalcul extends JPanel {
 
 				Request request = new Request("SELECT_ALL", "empreinte");
 				ArrayList<String> al;
+				  try {// is a number
+					   int n1= Integer.parseInt(textField.getText());
+					   int n2=  Integer.parseInt(nbUsesTram90.getText());
+					   int n3= Integer.parseInt(textField_3.getText());
+					   
+				   }
+				   catch ( NumberFormatException e1) {
+					   JOptionPane.showMessageDialog(null,
+								"Format not correct");
+					   e1.printStackTrace();
+				   }
+				  if (!textField_1.getText().equals("") && !textField_8.getText().equals("")) {
+						btnConclusion.setVisible(true);
+					}
 				try {
 					al = appStructure.sendMessageToServer(request);
-
+            
 					if ((textField.getText().equals("") || Integer.parseInt(textField.getText()) <= 0)
 							|| (nbUsesTram90.getText().equals("") || Integer.parseInt(nbUsesTram90.getText()) <= 0)
 							|| (textField_3.getText().equals("") || Integer.parseInt(textField_3.getText()) <= 0)
@@ -303,6 +318,7 @@ public class SeuilCalcul extends JPanel {
 						JOptionPane.showMessageDialog(null,
 								"The inputs are incorrects, all the inputs must be greater then 0");
 					} else {
+						
 						String s = al.get(0) + "\n";
 						SmartCity req1 = new ObjectMapper().readValue(s, SmartCity.class);
 						double calcul1 = calculS.estimatedThreshold((Integer) spinner.getValue(), req1.getHeightkm(),
@@ -330,12 +346,14 @@ public class SeuilCalcul extends JPanel {
 
 							}
 						}
+						
 					}
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
+				
 					e1.printStackTrace();
 				}
-
+ 
 			}
 		});
 
