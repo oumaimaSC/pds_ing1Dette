@@ -132,7 +132,8 @@ public class testPolitiqueDeDeplacement_Successful {
 		System.out.println("**********************************");
 		System.out.println("IN THIS TEST WE WILL PROPOSE A GOOD  TRAVEL POLICY");
 		System.out.println("EXPECTED RESULT :the proposed travel policy is better than the current travel policy");
-
+		System.out.println("EXPECTED RESULT : Estimate pollution threshold = 21718.87");
+		System.out.println("EXPECTED RESULT :the current pollution threshold = 42997.93");
 ///////////// transition ///////////////////////////////////////
 		double calculD = calcul.estimatedThreshold(nbreVehiculeD, perimetre, nbreCyclisteD, nbreTramD, nbrePietonD);
 		double calculE = calcul.estimatedThreshold(nbreVehiculeE, perimetre, nbreCyclisteE, nbreTramE, nbrePietonE);
