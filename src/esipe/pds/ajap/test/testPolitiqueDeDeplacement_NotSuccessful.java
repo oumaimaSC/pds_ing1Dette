@@ -23,7 +23,7 @@ public class testPolitiqueDeDeplacement_NotSuccessful {
 	public SmartCity getSmartCity() {
 		try {
 			readFichierjson table = new readFichierjson();
-			String s = table.readFileCarbonEstimateConf();///// STACK THE FILE'S VALUES INTO s
+			String s = table.readFileCarbonEstimateConf();
 			SmartCity sc = new ObjectMapper().readValue(s, SmartCity.class);
 			return sc;
 		} catch (Exception e) {
@@ -58,11 +58,6 @@ public class testPolitiqueDeDeplacement_NotSuccessful {
 	}
 
 	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
-		System.out.println("**********************************");
-		System.out.println("  THE BEGINNING OF THE TEST 1");
-		System.out.println("**********************************");
-		System.out.println("IN THIS TEST WE WILL PROPOSE a good  TRAVEL POLICY");
-		System.out.println("EXPECTED RESULT :the current travel policy is better than the proposed travel policy");
 ////////////////initialisation des données ////////////////////////
 		CalculS calcul = new CalculS();
 		testPolitiqueDeDeplacement_NotSuccessful test = new testPolitiqueDeDeplacement_NotSuccessful();
@@ -132,10 +127,16 @@ public class testPolitiqueDeDeplacement_NotSuccessful {
 		int nbreCyclisteE = 50;
 		int nbrePietonD = (nbrePopulation - nbreVehiculeD - nbreTramD - nbreCyclisteD);
 
+		System.out.println("**********************************");
+		System.out.println("  THE BEGINNING OF THE TEST 1");
+		System.out.println("**********************************");
+		System.out.println("IN THIS TEST WE WILL PROPOSE A BAD  TRAVEL POLICY");
+		System.out.println("EXPECTED RESULT :the current travel policy is better than the proposed travel policy");
+
 ///////////// transition ///////////////////////////////////////
 		double calculD = calcul.estimatedThreshold(nbreVehiculeD, perimetre, nbreCyclisteD, nbreTramD, nbrePietonD);
 		double calculE = calcul.estimatedThreshold(nbreVehiculeE, perimetre, nbreCyclisteE, nbreTramE, nbrePietonE);
-		System.out.println("*********3***********");
+		
 		System.out.println("the proposed travel policy");
 		System.out.println("perimetre : " + perimetre);
 		System.out.println("The number of vehicles :" + nbreVehiculeE);

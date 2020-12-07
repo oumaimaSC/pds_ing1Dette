@@ -18,7 +18,7 @@ import esipe.pds.ajap.common.Response;
 import esipe.pds.ajap.common.SmartCity;
 import esipe.pds.ajap.common.Transportation;
 
-public class testPolitiqueDeDeplacement_Successful {
+public class testPolitiqueDeDeplacement_ThrowErreur {
 
 	public SmartCity getSmartCity() {
 		try {
@@ -121,17 +121,17 @@ public class testPolitiqueDeDeplacement_Successful {
 		int nbreCyclisteD = Bike.getDailytransportusercount();
 		int nbrePopulation = 10000;
 
-		int nbreVehiculeE=2000;
-		int nbreTramE=1000;
-		int nbrePietonE=5000;
-		int nbreCyclisteE=500;
+		int nbreVehiculeE = 50000;
+		int nbreTramE = 50000;
+		int nbrePietonE = 500;
+		int nbreCyclisteE = 50000;
 		int nbrePietonD = (nbrePopulation - nbreVehiculeD - nbreTramD - nbreCyclisteD);
 
 		System.out.println("**********************************");
 		System.out.println("  THE BEGINNING OF THE TEST 1");
 		System.out.println("**********************************");
-		System.out.println("IN THIS TEST WE WILL PROPOSE A GOOD  TRAVEL POLICY");
-		System.out.println("EXPECTED RESULT :the proposed travel policy is better than the current travel policy");
+		System.out.println("IN THIS TEST WE WILL PROPOSE TRAVEL POLICY  NOT ACCEPTED");
+		System.out.println("EXPECTED RESULT :The sums of the users of transport must be less than the number of population");
 
 ///////////// transition ///////////////////////////////////////
 		double calculD = calcul.estimatedThreshold(nbreVehiculeD, perimetre, nbreCyclisteD, nbreTramD, nbrePietonD);
@@ -144,7 +144,7 @@ public class testPolitiqueDeDeplacement_Successful {
 		System.out.println("The number of cyclists :" + nbreCyclisteE);
 		System.out.println("the number of pedestrians :" + nbrePietonE);
 		System.out.println("the number of tram users:" + nbreTramE);
-		System.out.println("pollution threshold : " + calculE);
+		//System.out.println("pollution threshold : " + calculE);
 		System.out.println("**********************************");
 		System.out.println("**********************************");
 		System.out.println("the current travel policy");
@@ -152,9 +152,14 @@ public class testPolitiqueDeDeplacement_Successful {
 		System.out.println("The number of cyclists :" + nbreCyclisteD);
 		System.out.println("the number of pedestrians :" + nbrePietonD);
 		System.out.println("the number of tram users:" + nbreTramD);
-		System.out.println("the current pollution threshold :" + calculD);
+		//System.out.println("the current pollution threshold :" + calculD);
 
-/////verification///////////////////////////////////////////////////////////////				
+/////verification///////////////////////////////////////////////////////////////	
+		if (somme(nbreVehiculeE, nbreCyclisteE, nbreTramE, nbrePietonE ) > nbrePopulation) {
+			 System.out.println("The sums of the users of transport must be less than the number of population");
+		}
+	 else {
+			
 		if (calculE < calculD) {
 			System.out.println("Conclusion :the proposed travel policy is better than the current travel policy");
 		} else {
@@ -167,4 +172,4 @@ public class testPolitiqueDeDeplacement_Successful {
 	}
 
 }
-//}
+}
