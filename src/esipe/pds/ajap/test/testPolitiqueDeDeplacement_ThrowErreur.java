@@ -156,7 +156,9 @@ public class testPolitiqueDeDeplacement_ThrowErreur {
 
 /////verification///////////////////////////////////////////////////////////////	
 		if (somme(nbreVehiculeE, nbreCyclisteE, nbreTramE, nbrePietonE ) > nbrePopulation) {
-			 System.out.println("The sums of the users of transport must be less than the number of population");
+			System.out.println("somme = " +somme(nbreVehiculeE, nbreCyclisteE, nbreTramE, nbrePietonE ) );
+			System.out.println("the number of population = 10000");
+			System.out.println("The sums of the users of transport must be less than the number of population");
 		}
 	 else {
 			
