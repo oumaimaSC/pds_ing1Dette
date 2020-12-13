@@ -2,17 +2,17 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 
-<!--	
+
  
 	<entry key="driver">org.postgresql.Driver</entry>
 	<entry key="url">jdbc:postgresql://localhost:5432/OumaimaSC</entry>
 	<entry key="login">postgres</entry>
 	<entry key="password">a</entry>
--->	
- 
+
+ <!--	
 	<entry key="driver">org.postgresql.Driver</entry>
 	<entry key="url">jdbc:postgresql://172.31.249.233:5432/oumaimasc</entry>
 	<entry key="login">oumaimasc</entry>
 	<entry key="password">toto</entry>
-
+-->	
 </properties>
